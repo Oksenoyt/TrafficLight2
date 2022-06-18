@@ -12,8 +12,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var redTrafficLightLabel: UIView!
     @IBOutlet weak var yellowTrafficLightLabel: UIView!
     @IBOutlet weak var greenTrafficLightLabel: UIView!
+    @IBOutlet weak var changeButton: UIButton!
     
-    @IBOutlet weak var colorChangeButton: UIButton!
+    var includedColor = "not included"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +28,11 @@ class ViewController: UIViewController {
         greenTrafficLightLabel.alpha = 0.3
         greenTrafficLightLabel.layer.cornerRadius = greenTrafficLightLabel.frame.size.width / 2
         
-        colorChangeButton.layer.cornerRadius = 20
+        changeButton.layer.cornerRadius = 20
     }
     
-    var includedColor = "not included"
-    
     @IBAction func changeButtonTapped() {
-        colorChangeButton.setTitle("NEXT", for: .normal)
+        changeButton.setTitle("NEXT", for: .normal)
         
         switch includedColor {
         case "red":
