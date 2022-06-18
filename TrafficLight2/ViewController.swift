@@ -9,9 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var redTrafficLightLabel: UIView!
-    @IBOutlet weak var yellowTrafficLightLabel: UIView!
-    @IBOutlet weak var greenTrafficLightLabel: UIView!
+    @IBOutlet weak var redTrafficLightView: UIView!
+    @IBOutlet weak var yellowTrafficLightView: UIView!
+    @IBOutlet weak var greenTrafficLightView: UIView!
     @IBOutlet weak var changeButton: UIButton!
     
     var includedColor = "not included"
@@ -19,14 +19,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        redTrafficLightLabel.alpha = 0.3
-        redTrafficLightLabel.layer.cornerRadius = yellowTrafficLightLabel.frame.size.width / 2
+        redTrafficLightView.alpha = 0.3
+        redTrafficLightView.layer.cornerRadius = yellowTrafficLightView.frame.size.width / 2
         
-        yellowTrafficLightLabel.alpha = 0.3
-        yellowTrafficLightLabel.layer.cornerRadius = yellowTrafficLightLabel.frame.size.width / 2
+        yellowTrafficLightView.alpha = 0.3
+        yellowTrafficLightView.layer.cornerRadius = yellowTrafficLightView.frame.size.width / 2
         
-        greenTrafficLightLabel.alpha = 0.3
-        greenTrafficLightLabel.layer.cornerRadius = greenTrafficLightLabel.frame.size.width / 2
+        greenTrafficLightView.alpha = 0.3
+        greenTrafficLightView.layer.cornerRadius = greenTrafficLightView.frame.size.width / 2
         
         changeButton.layer.cornerRadius = 20
     }
@@ -36,16 +36,16 @@ class ViewController: UIViewController {
         
         switch includedColor {
         case "red":
-            yellowTrafficLightLabel.alpha = 1
-            redTrafficLightLabel.alpha = 0.3
+            yellowTrafficLightView.alpha = 1
+            redTrafficLightView.alpha = 0.3
             includedColor = "yellow"
         case "yellow":
-            greenTrafficLightLabel.alpha = 1
-            yellowTrafficLightLabel.alpha = 0.3
+            greenTrafficLightView.alpha = 1
+            yellowTrafficLightView.alpha = 0.3
             includedColor = "green"
         default:
-            redTrafficLightLabel.alpha = 1
-            greenTrafficLightLabel.alpha = 0.3
+            redTrafficLightView.alpha = 1
+            greenTrafficLightView.alpha = 0.3
             includedColor = "red"
         }
     }
